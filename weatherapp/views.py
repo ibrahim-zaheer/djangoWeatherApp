@@ -1,14 +1,14 @@
 from django.shortcuts import render
-# import json to load json data to python dictionary 
+
 import json 
-# urllib.request to make a request to api 
+
 import urllib.request 
-# Create your views here.
+
 def weather(request):
     if request.method == 'POST':
         city = request.POST['city']
-        source = urllib.request.urlopen('http://api.openweathermap.org/data/2.5/weather?q='+ city + '&appid=2af7e462108098f68ef5b6292ca57702').read()
-        # source = urllib.request.urlopen('http://api.openweathermap.org/data/2.5/weather?q=' + city + '11a3c55dbe4cefad294710275920329f').read()
+        source = urllib.request.urlopen('http://api.openweathermap.org/data/2.5/weather?q='+ city + '&appid=dd411b0bf578a4258b4b94ebf0e5a2a5').read()
+       
 
         list_of_data = json.loads(source)
         data={
